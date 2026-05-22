@@ -1,6 +1,6 @@
 services:
   backend:
-    image: yourdockerhubusername/gateway-backend:a1b2c3d
+    image: lavro/gateway-backend:a1b2c3d
 
     environment:
       SECRET_KEY: prod-secret

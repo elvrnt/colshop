@@ -7,7 +7,7 @@ on:
       - staging
 
 env:
-  IMAGE_NAME: yourdockerhubusername/gateway-backend
+  IMAGE_NAME: lavro/gateway-backend
 
 jobs:
   build:
