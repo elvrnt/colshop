@@ -29,6 +29,23 @@ DEBUG = True
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
 
+
+# REDIS
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
+
+REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
+REDIS_PORT = os.getenv("REDIS_PORT", "6379")
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": f"redis://{REDIS_HOST}:{REDIS_PORT}/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
 # Application definition
 
 INSTALLED_APPS = [
@@ -45,6 +62,7 @@ INSTALLED_APPS = [
     'django_filters',
     'strawberry.django',
     'corsheaders',
+    "storages",
     # local apps
     'users',
     'catalog',

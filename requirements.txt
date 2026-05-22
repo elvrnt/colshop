@@ -6,4 +6,8 @@ django-filter==24.2
 strawberry-graphql==0.227.4
 strawberry-graphql-django==0.40.0
 django-cors-headers==4.4.0
-
+django-environ==0.11.2
+redis
+django-redis
+django-storages
+boto3
